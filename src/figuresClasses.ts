@@ -16,14 +16,14 @@ export class Triangle implements Figure {
     public c: number,
   ) {
     if (this.a <= 0 || this.b <= 0 || this.c <= 0) {
-      throw new Error('Invalid data');
+      throw new Error('All sides of a triangle must be positive numbers');
     }
 
     const maxSide = Math.max(this.a, this.b, this.c);
     const sumOfSides = this.a + this.b + this.c - maxSide;
 
     if (sumOfSides <= maxSide) {
-      throw new Error('Is not triangle');
+      throw new Error('The sum of the lengths of any two sides of a triangle must be greater than the length of the third side.');
     }
   }
 
